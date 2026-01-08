@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="0rpn5jZev-lIDCj9W_5budGLkEMwYAqXZYoYXgfjcLM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Hira Tasqeen - PhD Researcher</title>
+    <meta name="description" content="Meet Hira Tasqeen, PhD Researcher in Materials Chemistry at Texas Tech University. Combining scientific research with Islamic wisdom and spirituality.">
+    <meta name="keywords" content="Hira Tasqeen, PhD researcher, materials chemistry, Texas Tech University, Muslim scientist, Islamic wisdom">
+    <meta name="author" content="Hira Tasqeen">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        .hero-about {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-about h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-about .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-about .affiliation {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .education-list, .interests-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .education-list li, .interests-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .education-list li strong {
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .interest-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .mission-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .quote-section {
+            background: #f8f9fa;
+            border-left: 5px solid #d4af37;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #5a6c7d;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section cite {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Islamic Wisdom & Nature</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-about">
+        <h1>Hira Tasqeen</h1>
+        <p class="subtitle">PhD Researcher | Materials Chemist | Seeker of Knowledge</p>
+        <p class="affiliation">Texas Tech University, Lubbock, Texas</p>
+    </div>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <div class="about-section">
+            <h2>🌟 About Me</h2>
+            <p>
+                Assalamu Alaikum! I am Hira Tasqeen, a PhD researcher in Materials Chemistry at Texas Tech University. My journey in science is deeply intertwined with my faith, as I believe that exploring the natural world is a way of understanding and appreciating Allah's magnificent creation.
+            </p>
+            <p>
+                My research focuses on developing environmentally-friendly methods for synthesizing advanced nanomaterials. Through green chemistry approaches, I aim to create solutions that benefit humanity while preserving the Earth—fulfilling our role as stewards (khalifah) of Allah's creation.
+            </p>
+            <p>
+                This website is my humble effort to bridge the worlds of science and spirituality, showing that Islamic wisdom and scientific inquiry are not opposing forces, but complementary paths to truth and understanding.
+            </p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="about-section">
+            <h2>🎓 Education</h2>
+            <ul class="education-list">
+                <li>
+                    <strong>PhD in Chemistry (In Progress)</strong><br>
+                    Texas Tech University, Lubbock, TX, USA<br>
+                    <em>Focus: Materials Chemistry & Nanotechnology</em>
+                </li>
+                <li>
+                    <strong>Master's/Bachelor's in Chemistry</strong><br>
+                    <em>Green Chemistry & Environmental Science</em>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="mission-box">
+            <h2>☪️ My Mission</h2>
+            <p>
+                To demonstrate that science and Islam are beautifully harmonious. Through research, education, and outreach, I strive to inspire young Muslims—especially women—to pursue careers in STEM while maintaining strong spiritual foundations.
+            </p>
+            <p style="margin-top: 1.5rem;">
+                Every experiment in the lab, every discovery, is a reminder of Allah's perfect design and infinite wisdom reflected in the natural world.
+            </p>
+        </div>
+
+        <!-- Islamic Quote -->
+        <div class="quote-section">
+            <blockquote>
+                "Are those who know equal to those who do not know?"
+            </blockquote>
+            <cite>— Quran 39:9</cite>
+        </div>
+
+        <!-- Research Interests -->
+        <div class="about-section">
+            <h2>🔬 Research & Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">🌿</div>
+                    <h3>Green Chemistry</h3>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">⚗️</div>
+                    <h3>Nanotechnology</h3>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">💧</div>
+                    <h3>Environmental Science</h3>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🧪</div>
+                    <h3>Materials Science</h3>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">☪️</div>
+                    <h3>Islamic Studies</h3>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">📚</div>
+                    <h3>Science Education</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Philosophy -->
+        <div class="about-section">
+            <h2>💡 Personal Philosophy</h2>
+            <p>
+                <strong>Faith & Reason:</strong> I believe that seeking knowledge is an act of worship. The Quran repeatedly encourages reflection on the natural world, making scientific inquiry a spiritual practice.
+            </p>
+            <p>
+                <strong>Environmental Stewardship:</strong> As Muslims, we are entrusted with caring for the Earth. My research in green chemistry is my contribution to this sacred responsibility.
+            </p>
+            <p>
+                <strong>Empowering Others:</strong> I am passionate about encouraging Muslim women to pursue STEM careers. Representation matters, and I hope to be an inspiration for the next generation.
+            </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>📬 Let's Connect</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                I'd love to hear from you! Whether you're a fellow researcher, student, or simply interested in the intersection of science and faith.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:htasqeen@ttu.edu" class="contact-btn">📧 Email Me</a>
+                <a href="https://scholar.google.com/citations?user=mt9Ic9kAAAAJ" target="_blank" class="contact-btn">📚 Google Scholar</a>
+                <a href="research.html" class="contact-btn">🔬 View Research</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Islamic Wisdom & Nature. Created for spiritual reflection and inspiration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">
+            <strong>Hira Tasqeen, PhD Researcher</strong><br>
+            Materials Chemistry & Nanotechnology | Texas Tech University
+        </p>
+    </footer>
+</body>
+</html>
