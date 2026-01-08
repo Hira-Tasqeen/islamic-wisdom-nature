@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Quotes - Islamic Wisdom & Nature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .page-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .page-intro h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .page-intro p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        .quotes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .quote-card {
+            position: relative;
+            height: 500px;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .quote-card:hover {
+            transform: scale(1.03) rotateY(2deg);
+            box-shadow: 0 25px 70px rgba(102, 126, 234, 0.4);
+        }
+
+        .quote-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6);
+        }
+
+        .quote-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7),
+                         0 0 20px rgba(255, 255, 255, 0.3);
+            max-width: 900px;
+            font-style: italic;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.3); }
+            to { text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 255, 255, 0.5); }
+        }
+
+        .quote-source {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #d4af37;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            border-top: 2px solid #d4af37;
+            padding-top: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .quote-card {
+                height: 400px;
+            }
+
+            .quote-text {
+                font-size: 1.4rem;
+            }
+
+            .quote-source {
+                font-size: 1.1rem;
+            }
+
+            .page-intro h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Islamic Wisdom & Nature</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-intro">
+        <h1>Words of Divine Wisdom</h1>
+        <p>Reflect upon these sacred verses and prophetic sayings, beautifully paired with the natural world that reminds us of Allah's infinite power and mercy.</p>
+    </div>
+
+    <div class="quotes-container">
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "And He it is who sends down rain from the sky, and We produce thereby the growth of all things. We produce from it greenery from which We produce grains arranged in layers."
+                </div>
+                <div class="quote-source">— Quran 6:99</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "Have they not looked at the heaven above them - how We structured it and adorned it and how it has no rifts?"
+                </div>
+                <div class="quote-source">— Quran 50:6</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "He created the heavens without pillars that you see and has cast into the earth firmly set mountains, lest it should shift with you, and dispersed therein from every creature."
+                </div>
+                <div class="quote-source">— Quran 31:10</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "Do they not see the birds controlled in the atmosphere of the sky? None holds them up except Allah. Indeed in that are signs for a people who believe."
+                </div>
+                <div class="quote-source">— Quran 16:79</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "It is He who sends down rain from the sky; from it is drink and from it is foliage in which you pasture animals. He causes to grow for you thereby crops, olives, palm trees, grapevines, and all kinds of fruits."
+                </div>
+                <div class="quote-source">— Quran 16:10-11</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "And it is He who spread the earth and placed therein firmly set mountains and rivers; and from all of the fruits He made therein two mates; He causes the night to cover the day."
+                </div>
+                <div class="quote-source">— Quran 13:3</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "Indeed, in the creation of the heavens and earth, and the alternation of the night and the day, and the ships which sail through the sea with that which benefits people... are signs for a people who use reason."
+                </div>
+                <div class="quote-source">— Quran 2:164</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "And He is the one who created the night and the day and the sun and the moon; all in an orbit are swimming."
+                </div>
+                <div class="quote-source">— Quran 21:33</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "And We have certainly made the Quran easy for remembrance, so is there any who will remember?"
+                </div>
+                <div class="quote-source">— Quran 54:17</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "And We send down from the sky rain with which We produce growth of every noble kind."
+                </div>
+                <div class="quote-source">— Quran 6:99</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "So glory be to Him in whose hand is the dominion of all things, and to Him you will be returned."
+                </div>
+                <div class="quote-source">— Quran 36:83</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-background" style="background-image: url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600&q=80');"></div>
+            <div class="quote-content">
+                <div class="quote-text">
+                    "The example of Paradise, which the righteous have been promised, is that beneath it rivers flow. Its fruit is lasting, and its shade."
+                </div>
+                <div class="quote-source">— Quran 13:35</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Islamic Wisdom & Nature. Created for spiritual reflection and inspiration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Founded by <strong>Hira Tasqeen</strong> - Chemist & Seeker of Truth</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

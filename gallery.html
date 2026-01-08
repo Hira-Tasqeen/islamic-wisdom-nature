@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Gallery - Islamic Wisdom & Nature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .gallery-intro h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-intro blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+            margin: 2rem auto;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .gallery-intro p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        .category-section {
+            margin: 4rem 0;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1) translateX(0); }
+            100% { transform: scale(1.1) translateX(-5%); }
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2) rotate(2deg);
+            animation: none;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(102,126,234,0.8));
+            padding: 2rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-item {
+                height: 300px;
+            }
+
+            .gallery-intro h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Islamic Wisdom & Nature</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="gallery-intro">
+        <h1>Allah's Beautiful Creation</h1>
+        <blockquote>
+            "Say, 'Travel through the land and observe how He began creation.'"
+            <br><br>
+            <strong>— Quran 29:20</strong>
+        </blockquote>
+        <p>Witness the magnificence of Allah's creation through these stunning natural landscapes. Each image is a reminder of His infinite wisdom, power, and mercy.</p>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">🏔️ Mountains & Valleys</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Mountain Peak">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Majestic Mountain Peak</div>
+                    <div class="gallery-description">"And the mountains as stakes" — Quran 78:7</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Alpine Heights">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Alpine Heights</div>
+                    <div class="gallery-description">"He has cast into the earth firmly set mountains" — Quran 31:10</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80" alt="Misty Valley">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Misty Valley</div>
+                    <div class="gallery-description">"And by the earth and He who spread it" — Quran 91:6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">🌊 Waters & Seas</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&q=80" alt="Ocean Waves">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Ocean Waves</div>
+                    <div class="gallery-description">"And it is He who has released the two seas" — Quran 25:53</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Tranquil Lake">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Tranquil Lake</div>
+                    <div class="gallery-description">"And We made from water every living thing" — Quran 21:30</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80" alt="Sunset Over Water">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Sunset Over Water</div>
+                    <div class="gallery-description">"The sun and the moon run on their fixed courses" — Quran 55:5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">🌲 Forests & Trees</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80" alt="Forest Path">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Forest Path</div>
+                    <div class="gallery-description">"We produce thereby the growth of all things" — Quran 6:99</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80" alt="Green Forest">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Green Forest</div>
+                    <div class="gallery-description">"Producing grain with layers" — Quran 6:99</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80" alt="Ancient Trees">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Ancient Trees</div>
+                    <div class="gallery-description">"And vegetation of all kinds" — Quran 6:99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">🌸 Fields & Flowers</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80" alt="Flower Meadow">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Flower Meadow</div>
+                    <div class="gallery-description">"And all kinds of fruits" — Quran 16:11</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&q=80" alt="Wild Flowers">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Wild Flowers</div>
+                    <div class="gallery-description">"Look at their fruits when they appear" — Quran 6:99</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80" alt="Vibrant Blooms">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Vibrant Blooms</div>
+                    <div class="gallery-description">"From every beautiful pair" — Quran 22:5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">☁️ Skies & Horizons</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80" alt="Lake Reflection">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Lake Reflection</div>
+                    <div class="gallery-description">"How We structured it and adorned it" — Quran 50:6</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80" alt="Golden Sunset">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Golden Sunset</div>
+                    <div class="gallery-description">"The alternation of night and day" — Quran 3:190</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80" alt="Starry Night">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Starry Night</div>
+                    <div class="gallery-description">"By the sky full of great paths" — Quran 51:7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Islamic Wisdom & Nature. Created for spiritual reflection and inspiration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Founded by <strong>Hira Tasqeen</strong> - Chemist & Seeker of Truth</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

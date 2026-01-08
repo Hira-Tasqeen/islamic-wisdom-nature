@@ -1,0 +1,272 @@
+---
+title: "Islamic Quotes & Wisdom"
+page-layout: full
+---
+
+<style>
+.quotes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.quote-card {
+  position: relative;
+  height: 500px;
+  margin-bottom: 3rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: scale(1.02);
+}
+
+.quote-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+}
+
+.quote-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.quote-text {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  max-width: 900px;
+  font-style: italic;
+}
+
+.quote-source {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d4af37;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  border-top: 2px solid #d4af37;
+  padding-top: 1rem;
+}
+
+.page-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  padding: 2rem;
+}
+
+.page-intro h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.page-intro p {
+  font-size: 1.2rem;
+  color: #5a6c7d;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .quote-card {
+    height: 400px;
+  }
+  
+  .quote-text {
+    font-size: 1.4rem;
+  }
+  
+  .quote-source {
+    font-size: 1.1rem;
+  }
+  
+  .page-intro h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+
+::: {.page-intro}
+# Words of Divine Wisdom
+
+Reflect upon these sacred verses and prophetic sayings, beautifully paired with the natural world that reminds us of Allah's infinite power and mercy.
+:::
+
+::: {.quotes-container}
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"And He it is who sends down rain from the sky, and We produce thereby the growth of all things. We produce from it greenery from which We produce grains arranged in layers."
+:::
+::: {.quote-source}
+— Quran 6:99
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"Have they not looked at the heaven above them - how We structured it and adorned it and how it has no rifts?"
+:::
+::: {.quote-source}
+— Quran 50:6
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"He created the heavens without pillars that you see and has cast into the earth firmly set mountains, lest it should shift with you, and dispersed therein from every creature."
+:::
+::: {.quote-source}
+— Quran 31:10
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"Do they not see the birds controlled in the atmosphere of the sky? None holds them up except Allah. Indeed in that are signs for a people who believe."
+:::
+::: {.quote-source}
+— Quran 16:79
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"It is He who sends down rain from the sky; from it is drink and from it is foliage in which you pasture animals. He causes to grow for you thereby crops, olives, palm trees, grapevines, and all kinds of fruits."
+:::
+::: {.quote-source}
+— Quran 16:10-11
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"And it is He who spread the earth and placed therein firmly set mountains and rivers; and from all of the fruits He made therein two mates; He causes the night to cover the day."
+:::
+::: {.quote-source}
+— Quran 13:3
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"Indeed, in the creation of the heavens and earth, and the alternation of the night and the day, and the ships which sail through the sea with that which benefits people... are signs for a people who use reason."
+:::
+::: {.quote-source}
+— Quran 2:164
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"And He is the one who created the night and the day and the sun and the moon; all in an orbit are swimming."
+:::
+::: {.quote-source}
+— Quran 21:33
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"And We have certainly made the Quran easy for remembrance, so is there any who will remember?"
+:::
+::: {.quote-source}
+— Quran 54:17
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"And We send down from the sky rain with which We produce growth of every noble kind. So look at their fruits when they appear and their ripening. Indeed in that are signs for a people who believe."
+:::
+::: {.quote-source}
+— Quran 6:99
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"So glory be to Him in whose hand is the dominion of all things, and to Him you will be returned."
+:::
+::: {.quote-source}
+— Quran 36:83
+:::
+:::
+:::
+
+::: {.quote-card}
+::: {.quote-background style="background-image: url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600&q=80');"}
+:::
+::: {.quote-content}
+::: {.quote-text}
+"The example of Paradise, which the righteous have been promised, is that beneath it rivers flow. Its fruit is lasting, and its shade."
+:::
+::: {.quote-source}
+— Quran 13:35
+:::
+:::
+:::
+
+:::

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry in Nature - Islamic Wisdom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .page-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 4rem auto 2rem;
+            padding: 2rem;
+        }
+
+        .page-intro h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .page-intro .subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-intro p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        .chemistry-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .chem-card {
+            position: relative;
+            min-height: 600px;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            background: white;
+        }
+
+        .chem-card:hover {
+            transform: scale(1.01);
+        }
+
+        .chem-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .chem-content {
+            padding: 3rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,1));
+        }
+
+        .chem-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chem-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .chem-process {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .chem-process h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .chemical-equation {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            color: #0ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            overflow-x: auto;
+        }
+
+        .islamic-quote {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe8b8 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #d4af37;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        .islamic-quote p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .quote-source {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-align: right;
+            font-style: normal;
+        }
+
+        .chem-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .detail-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .detail-box h5 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .detail-box p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .chem-card {
+                min-height: auto;
+            }
+
+            .chem-image {
+                height: 300px;
+            }
+
+            .page-intro h1 {
+                font-size: 2rem;
+            }
+
+            .chem-title {
+                font-size: 1.5rem;
+            }
+
+            .chemical-equation {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Islamic Wisdom & Nature</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-intro">
+        <h1>Chemistry in Allah's Creation</h1>
+        <p class="subtitle">A Chemist's Journey Through Nature's Molecular Miracles</p>
+        <p>Explore the profound chemical processes that sustain life and beauty in nature, each a testament to the Divine Designer's infinite wisdom.</p>
+    </div>
+
+    <div class="chemistry-container">
+
+        <!-- Photosynthesis -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80" alt="Green Forest" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🌿 PHOTOSYNTHESIS</span>
+                <h2 class="chem-title">The Miracle of Green: Light to Life</h2>
+                
+                <div class="chem-process">
+                    <h4>The Chemical Process:</h4>
+                    <p>Plants capture solar energy and convert carbon dioxide and water into glucose and oxygen through the most elegant chemical reaction on Earth.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Chlorophyll</h5>
+                        <p>The green pigment containing magnesium (Mg) at its core, absorbing red and blue light wavelengths (λ = 430-450nm, 640-680nm)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Light-Dependent Reactions</h5>
+                        <p>Occur in thylakoid membranes, producing ATP and NADPH through electron transport chains</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Calvin Cycle</h5>
+                        <p>Carbon fixation process using RuBisCO enzyme to produce glucose molecules</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"And He it is who sends down rain from the sky, and We produce thereby the growth of all things. We produce from it greenery from which We produce grains arranged in layers. And from the palm trees - of its emerging fruit are clusters hanging low. And gardens of grapevines and olives and pomegranates, similar yet varied. Look at their fruit when it appears and their ripening. Indeed in that are signs for a people who believe."</p>
+                    <div class="quote-source">— Quran 6:99</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> This verse beautifully describes the growth process driven by water (H₂O) and culminating in the biochemical synthesis of diverse fruits - each with unique organic compounds, sugars, and secondary metabolites.</p>
+            </div>
+        </div>
+
+        <!-- Water Chemistry -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1600&q=80" alt="Water" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">💧 WATER CHEMISTRY</span>
+                <h2 class="chem-title">H₂O: The Universal Solvent of Life</h2>
+                
+                <div class="chem-process">
+                    <h4>The Molecular Marvel:</h4>
+                    <p>Water's bent molecular geometry (104.5° bond angle) and polar covalent O-H bonds create hydrogen bonding networks that enable all life processes.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    H-O-H  (μ = 1.85 D, BP = 100°C at 1 atm)
+                    <br>Hydrogen bonds: 20 kJ/mol
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>High Specific Heat</h5>
+                        <p>4.18 J/g°C - stabilizes Earth's temperature and moderates climate through vast ocean heat capacity</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Universal Solvent</h5>
+                        <p>Dissolves ionic compounds through ion-dipole interactions and polar molecules through dipole-dipole forces</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Cohesion & Adhesion</h5>
+                        <p>Surface tension (72 mN/m) enables capillary action, transporting nutrients in plants against gravity</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"And We made from water every living thing. Will they not then believe?"</p>
+                    <div class="quote-source">— Quran 21:30</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> Every living cell is 70-90% water. All biochemical reactions occur in aqueous environments. This verse scientifically affirms water's role as the fundamental medium for life - from DNA replication to protein folding to cellular metabolism.</p>
+            </div>
+        </div>
+
+        <!-- Oxygen & Respiration -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80" alt="Fresh Air" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🫁 CELLULAR RESPIRATION</span>
+                <h2 class="chem-title">The Breath of Life: Aerobic Metabolism</h2>
+                
+                <div class="chem-process">
+                    <h4>The Energy Currency:</h4>
+                    <p>Cellular respiration is the reverse of photosynthesis, breaking down glucose in the presence of oxygen to release energy stored in chemical bonds.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38 ATP
+                    <br>ΔG° = -2880 kJ/mol
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Glycolysis</h5>
+                        <p>Glucose → 2 Pyruvate + 2 ATP (cytoplasm, anaerobic phase)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Krebs Cycle</h5>
+                        <p>Acetyl-CoA oxidation producing NADH, FADH₂, CO₂ (mitochondrial matrix)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Electron Transport Chain</h5>
+                        <p>Oxidative phosphorylation generating 34 ATP via chemiosmosis (inner mitochondrial membrane)</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"And by the soul and He who proportioned it. And inspired it with discernment of its wickedness and its righteousness. He has succeeded who purifies it."</p>
+                    <div class="quote-source">— Quran 91:7-9</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> The "soul" (nafs) requires constant oxygen for aerobic respiration. Each breath delivers O₂ to trillions of mitochondria, the cellular powerhouses producing ATP - the energy currency enabling every thought, movement, and heartbeat.</p>
+            </div>
+        </div>
+
+        <!-- Nitrogen Cycle -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Soil and Mountains" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🌱 NITROGEN FIXATION</span>
+                <h2 class="chem-title">Earth's Fertilizer: The Nitrogen Cycle</h2>
+                
+                <div class="chem-process">
+                    <h4>Breaking the Triple Bond:</h4>
+                    <p>Nitrogen-fixing bacteria convert atmospheric N₂ into bioavailable ammonia using nitrogenase enzyme, requiring 16 ATP per N₂ molecule.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    N₂ + 8H⁺ + 8e⁻ + 16 ATP → 2NH₃ + H₂ + 16 ADP + 16 Pi
+                    <br>Nitrification: NH₃ → NO₂⁻ → NO₃⁻
+                    <br>Denitrification: NO₃⁻ → N₂
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Biological Fixation</h5>
+                        <p>Rhizobium bacteria in legume root nodules fix 90-130 kg N/hectare/year through symbiotic relationship</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Nitrification</h5>
+                        <p>Nitrosomonas & Nitrobacter bacteria oxidize NH₃ to NO₃⁻, making nitrogen available for plant uptake</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Amino Acid Synthesis</h5>
+                        <p>Plants incorporate NH₄⁺/NO₃⁻ into amino acids through glutamine synthetase pathway</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"And He has cast into the earth firmly set mountains, lest it shift with you, and rivers and roads, that you may be guided."</p>
+                    <div class="quote-source">— Quran 16:15</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> Mountains contain mineral-rich soils where nitrogen-fixing bacteria thrive. The rivers mentioned transport dissolved nitrates (NO₃⁻) downstream, fertilizing valleys and deltas - a perfect chemical distribution system designed into Earth's geology.</p>
+            </div>
+        </div>
+
+        <!-- pH and Ocean Chemistry -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600&q=80" alt="Ocean" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🌊 OCEAN CHEMISTRY</span>
+                <h2 class="chem-title">The Carbonate Buffer: Ocean pH Balance</h2>
+                
+                <div class="chem-process">
+                    <h4>Chemical Equilibrium:</h4>
+                    <p>Ocean water maintains pH ~8.1 through carbonate buffer system, absorbing atmospheric CO₂ and regulating Earth's climate.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    CO₂(g) + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ ⇌ 2H⁺ + CO₃²⁻
+                    <br>CaCO₃(s) ⇌ Ca²⁺ + CO₃²⁻  (Ksp = 3.36 × 10⁻⁹)
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Carbonate System</h5>
+                        <p>HCO₃⁻/CO₃²⁻ buffer maintains ocean pH within 0.1 units despite CO₂ influx, preventing acidification</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Salinity</h5>
+                        <p>~3.5% dissolved salts (mainly NaCl, MgCl₂, MgSO₄) create osmotic pressure affecting marine life</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Dissolved Oxygen</h5>
+                        <p>O₂ solubility decreases with temperature and salinity; phytoplankton produce 50-80% of Earth's O₂</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"And it is He who has released the two seas, one fresh and sweet and one salty and bitter, and He placed between them a barrier and prohibiting partition."</p>
+                    <div class="quote-source">— Quran 25:53</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> Where rivers (fresh water, low ionic strength) meet oceans (salt water, high ionic strength), a halocline forms - a density-driven stratification layer acting as a chemical "barrier" preventing immediate mixing, exactly as described 1400 years ago.</p>
+            </div>
+        </div>
+
+        <!-- Colors in Nature -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1600&q=80" alt="Colorful Flowers" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🌺 PIGMENT CHEMISTRY</span>
+                <h2 class="chem-title">Nature's Palette: Chromophores & Color</h2>
+                
+                <div class="chem-process">
+                    <h4>Molecular Light Absorption:</h4>
+                    <p>Conjugated π-electron systems in organic molecules absorb specific wavelengths, creating the vibrant colors we see in flowers, fruits, and leaves.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    Anthocyanins (red/purple): C₁₅H₁₁O⁺ + OH⁻
+                    <br>Carotenoids (orange/yellow): C₄₀H₅₆ (β-carotene)
+                    <br>Chlorophyll (green): C₅₅H₇₂MgN₄O₅
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>pH-Dependent Color</h5>
+                        <p>Anthocyanins change color: red (pH<3), purple (pH 7-8), blue (pH>10) - creating hydrangea color variations</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Conjugation Length</h5>
+                        <p>More conjugated double bonds → longer λmax → bathochromic shift (red shift in absorption)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Fall Colors</h5>
+                        <p>Chlorophyll degradation reveals carotenoids (yellow) and newly synthesized anthocyanins (red/purple)</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"Do you not see that Allah sends down rain from the sky, and We produce thereby fruits of varying colors? And in the mountains are tracts, white and red of varying shades and some extremely black. And among people and moving creatures and grazing livestock are various colors similarly. Only those fear Allah, from among His servants, who have knowledge."</p>
+                    <div class="quote-source">— Quran 35:27-28</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> This verse connects knowledge with recognizing Allah's signs. A chemist sees colors as photon absorption by chromophores - each hue revealing molecular structure, conjugation patterns, and electronic transitions. The "knowledge" mentioned includes understanding the chemistry behind nature's beauty.</p>
+            </div>
+        </div>
+
+        <!-- Atmospheric Chemistry -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1600&q=80" alt="Sunset Sky" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">☁️ ATMOSPHERIC CHEMISTRY</span>
+                <h2 class="chem-title">The Sky's Chemistry: Ozone & Rayleigh Scattering</h2>
+                
+                <div class="chem-process">
+                    <h4>Protective Layer:</h4>
+                    <p>The stratospheric ozone layer (O₃) absorbs harmful UV radiation (λ = 200-315 nm), protecting all life while visible light passes through.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    O₂ + hν (λ < 240 nm) → 2O·
+                    <br>O· + O₂ + M → O₃ + M
+                    <br>O₃ + hν (240-315 nm) → O₂ + O·
+                    <br>Rayleigh Scattering: I ∝ 1/λ⁴ (blue sky phenomenon)
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Ozone Layer</h5>
+                        <p>15-35 km altitude, 10 ppm O₃ concentration, absorbs 97-99% of UV-B and UV-C radiation</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Blue Sky</h5>
+                        <p>Short wavelength blue light (λ~450nm) scatters 16× more than red (λ~700nm) due to λ⁻⁴ dependence</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Red Sunset</h5>
+                        <p>Long atmospheric path at sunset → blue light scattered away → red/orange light reaches observer</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"Have they not looked at the heaven above them - how We structured it and adorned it and how it has no rifts? And the earth - We spread it out and cast therein firmly set mountains and made grow therein plants of every beautiful kind, giving insight and a reminder for every servant who turns to Allah."</p>
+                    <div class="quote-source">— Quran 50:6-8</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> The "structure" of heaven includes atmospheric layers with precise chemical compositions. The absence of "rifts" reflects the stable stratification: troposphere (78% N₂, 21% O₂), stratosphere (O₃ layer), mesosphere, and thermosphere - each layer serving critical functions in sustaining life.</p>
+            </div>
+        </div>
+
+        <!-- DNA and Genetic Code -->
+        <div class="chem-card">
+            <img src="https://images.unsplash.com/photo-1530562844990-3f7162e2b3b8?w=1600&q=80" alt="DNA Structure" class="chem-image">
+            <div class="chem-content">
+                <span class="chem-category">🧬 BIOCHEMISTRY</span>
+                <h2 class="chem-title">The Blueprint of Life: DNA Double Helix</h2>
+                
+                <div class="chem-process">
+                    <h4>Information Storage:</h4>
+                    <p>Deoxyribonucleic acid stores genetic information through complementary base pairing: A-T (2 H-bonds) and G-C (3 H-bonds), forming a stable double helix.</p>
+                </div>
+
+                <div class="chemical-equation">
+                    Adenine (C₅H₅N₅) + Thymine (C₅H₆N₂O₂)
+                    <br>Guanine (C₅H₅N₅O) + Cytosine (C₄H₅N₃O)
+                    <br>Sugar-Phosphate Backbone: C₅H₁₀O₄ - PO₄³⁻
+                    <br>B-DNA: 10.5 bp/turn, 3.4 Å rise/bp, 2 nm diameter
+                </div>
+
+                <div class="chem-details">
+                    <div class="detail-box">
+                        <h5>Hydrogen Bonding</h5>
+                        <p>Specific base pairing through H-bonds (20-40 kJ/mol) enables accurate replication and transcription</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Antiparallel Strands</h5>
+                        <p>5'→3' and 3'→5' directionality; phosphodiester bonds link nucleotides with high fidelity</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>Genetic Code</h5>
+                        <p>64 codons (4³ combinations) encode 20 amino acids + stop signals; universal across all life</p>
+                    </div>
+                </div>
+
+                <div class="islamic-quote">
+                    <p>"Does man think that he will be left neglected? Had he not been a sperm-drop from semen emitted? Then he was a clinging clot, and Allah created him and proportioned him. And made of him two mates, the male and the female."</p>
+                    <div class="quote-source">— Quran 75:36-39</div>
+                </div>
+
+                <p><strong>Chemical Reflection:</strong> The "proportioning" refers to embryonic development programmed by DNA. Sex determination occurs through SRY gene on Y chromosome triggering testosterone synthesis - a cascade of gene expression and biochemical reactions all encoded in the double helix, established at fertilization when sperm DNA combines with egg DNA.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Islamic Wisdom & Nature. Created for spiritual reflection and inspiration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Founded by <strong>Hira Tasqeen</strong> - Chemist & Seeker of Truth</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

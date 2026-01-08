@@ -1,0 +1,57 @@
+/*-- scss:defaults --*/
+
+// Colors
+$primary: #667eea;
+$secondary: #764ba2;
+$success: #48bb78;
+$info: #4299e1;
+$warning: #ed8936;
+$danger: #f56565;
+$light: #f7fafc;
+$dark: #2d3748;
+
+// Typography
+$font-family-sans-serif: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+$headings-font-weight: 600;
+$font-size-base: 1.05rem;
+$line-height-base: 1.7;
+
+// Spacing
+$spacer: 1rem;
+
+// Border radius
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem;
+
+/*-- scss:rules --*/
+
+// Gradient backgrounds
+.bg-gradient-primary {
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+}
+
+// Custom button styles
+.btn {
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Card enhancements
+.card {
+  border: none;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+}

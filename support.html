@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Premium - Islamic Wisdom & Nature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .support-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #667eea;
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .card p {
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .premium-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe8b8 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 4px solid #d4af37;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .premium-box h2 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .premium-feature {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .premium-feature span {
+            font-size: 1.5rem;
+        }
+
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .donation-btn {
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 15px;
+        }
+
+        .affiliate-section {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .affiliate-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .affiliate-card img {
+            max-width: 100%;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #5a6c7d;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial .author {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .donation-options {
+                flex-direction: column;
+            }
+
+            .donation-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Islamic Wisdom & Nature</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Shop & Support This Project</h1>
+        <p>Purchase educational products, premium content, and support through affiliate shopping - no donations needed!</p>
+    </div>
+
+    <div class="container">
+        <!-- Impact Stats -->
+        <div class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>10,000+</h3>
+                    <p>Monthly Visitors</p>
+                </div>
+                <div class="stat">
+                    <h3>8</h3>
+                    <p>Chemistry Topics</p>
+                </div>
+                <div class="stat">
+                    <h3>100+</h3>
+                    <p>Quranic Verses</p>
+                </div>
+                <div class="stat">
+                    <h3>Free</h3>
+                    <p>Always Accessible</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purchase Options Section -->
+        <div class="support-section">
+            <h2 class="section-title">🛍️ Shop & Support Through Purchases</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #5a6c7d;">Buy products, premium content, or shop through our affiliate links - you get value, we get supported!</p>
+            
+            <div class="donation-options">
+                <a href="https://www.amazon.com/gp/browse.html?node=283155&ref_=nav_em_T1_0_4_17_3__watches_0_0" target="_blank" class="btn donation-btn" onclick="alert('To create your Amazon Influencer Storefront:\n1. Visit: https://affiliate-program.amazon.com/influencers\n2. Sign up with your email\n3. Create your custom shop\n4. Replace this link!'); return false;">
+                    🛒 Shop Our Amazon Store
+                </a>
+                <a href="https://gumroad.com/hiratasqeen" target="_blank" class="btn btn-secondary donation-btn">
+                    📦 Buy Digital Products on Gumroad
+                </a>
+                <a href="https://patreon.com/islamicwisdomanature" target="_blank" class="btn btn-gold donation-btn">
+                    💎 Join Patreon (Premium Membership)
+                </a>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Sadaqah (One-Time)</h3>
+                    <p>Give sadaqah with any amount - every contribution counts</p>
+                    <p><strong>Zakat Eligible</strong> - Knowledge is a continuous charity (sadaqah jariyah)</p>
+                    <p style="color: #667eea; font-style: italic;">"The best charity is knowledge shared" - Prophet Muhammad ﷺ</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 10px;">
+                        <p style="font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">💳 PayPal:</p>
+                        <p style="font-size: 1.1rem; color: #2c3e50;"><strong>hiratasqeen@gmail.com</strong></p>
+                        <a href="https://www.paypal.me/hiratasqeen" target="_blank" class="btn" style="margin-top: 0.5rem; padding: 0.6rem 1.5rem; font-size: 0.95rem; background: #0070ba; color: white;">Send via PayPal</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💎</div>
+                    <h3>Sadaqah Jariyah (Monthly)</h3>
+                    <p>Ongoing charity with recurring support starting at $5/month</p>
+                    <p><strong>Continuous rewards even after death</strong> - earn hasanat as people benefit</p>
+                    <p style="color: #667eea; font-style: italic;">"When a person dies, their deeds end except three..." - Hadith</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 10px;">
+                        <p style="font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">💳 PayPal Subscription:</p>
+                        <p style="font-size: 1.1rem; color: #2c3e50;"><strong>hiratasqeen@gmail.com</strong></p>
+                        <a href="https://www.paypal.com/paypalme/hiratasqeen" target="_blank" class="btn" style="margin-top: 0.5rem; padding: 0.6rem 1.5rem; font-size: 0.95rem; background: #0070ba; color: white;">Set Up Monthly via PayPal</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <h3>Waqf (Endowment)</h3>
+                    <p>Sponsor development of permanent Islamic educational content</p>
+                    <p><strong>Your name preserved as waqf donor</strong> - enduring Islamic legacy</p>
+                    <p style="color: #667eea; font-style: italic;">Sponsor full chemistry topics for $100-500</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">
+                        <a href="mailto:hiratasqeen@gmail.com?subject=Waqf Sponsorship Inquiry&body=I'm interested in sponsoring content as a Waqf endowment." class="btn" style="margin-top: 0.5rem; padding: 0.6rem 1.5rem; font-size: 0.95rem; background: #d4af37; color: white;">📧 Contact for Waqf</a>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Digital Products Section -->
+        <div class="support-section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(212, 175, 55, 0.05)); padding: 3rem; border-radius: 20px; margin: 3rem 0;">
+            <h2 class="section-title">🛍️ Buy Digital Products</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #5a6c7d;">Instant download • Support our work • Get value for your money</p>
+            
+            <div class="cards-grid">
+                <div class="card" style="border: 2px solid #667eea;">
+                    <div class="card-icon">📕</div>
+                    <h3>Chemistry in the Quran eBook</h3>
+                    <p><strong>$19.99</strong></p>
+                    <p>Complete guide to chemical processes mentioned in Islamic texts with detailed equations and explanations</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>100+ pages PDF</li>
+                        <li>All chemistry equations</li>
+                        <li>Quranic verses + Tafsir</li>
+                        <li>Study worksheets included</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/chemistry-quran-ebook" target="_blank" class="btn" style="background: #667eea; color: white; margin-top: 1rem;">📥 Buy Now on Gumroad</a>
+                </div>
+
+                <div class="card" style="border: 2px solid #764ba2;">
+                    <div class="card-icon">🎨</div>
+                    <h3>Islamic Quote Graphics Pack</h3>
+                    <p><strong>$14.99</strong></p>
+                    <p>50 high-resolution Islamic quote graphics perfect for social media, printing, or personal use</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>50 unique designs</li>
+                        <li>4K resolution (3840x2160)</li>
+                        <li>Instagram & Facebook ready</li>
+                        <li>Commercial license included</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/islamic-graphics-pack" target="_blank" class="btn" style="background: #764ba2; color: white; margin-top: 1rem;">🎨 Buy Now on Gumroad</a>
+                </div>
+
+                <div class="card" style="border: 2px solid #d4af37;">
+                    <div class="card-icon">🖼️</div>
+                    <h3>HD Nature Wallpapers Bundle</h3>
+                    <p><strong>$9.99</strong></p>
+                    <p>100 stunning nature photographs with Islamic quotes overlay - perfect for desktop & mobile</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>100 HD wallpapers</li>
+                        <li>Desktop + Mobile sizes</li>
+                        <li>Authentic Quran verses</li>
+                        <li>Lifetime updates</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/nature-wallpapers" target="_blank" class="btn" style="background: #d4af37; color: white; margin-top: 1rem;">🖼️ Buy Now on Gumroad</a>
+                </div>
+
+                <div class="card" style="border: 2px solid #48bb78;">
+                    <div class="card-icon">📊</div>
+                    <h3>Printable Study Planner</h3>
+                    <p><strong>$7.99</strong></p>
+                    <p>Islamic-themed study planner with Salah times, Quran tracking, and productivity tools</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>30 printable pages</li>
+                        <li>Weekly & monthly layouts</li>
+                        <li>Salah time tracker</li>
+                        <li>Goal setting worksheets</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/study-planner" target="_blank" class="btn" style="background: #48bb78; color: white; margin-top: 1rem;">📊 Buy Now on Gumroad</a>
+                </div>
+
+                <div class="card" style="border: 2px solid #f56565;">
+                    <div class="card-icon">📺</div>
+                    <h3>Chemistry Video Course</h3>
+                    <p><strong>$49.99</strong></p>
+                    <p>Complete video course on chemistry fundamentals with Islamic perspective and real-world applications</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>10+ hours of video</li>
+                        <li>All chemistry topics covered</li>
+                        <li>Downloadable resources</li>
+                        <li>Certificate of completion</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/chemistry-course" target="_blank" class="btn" style="background: #f56565; color: white; margin-top: 1rem;">🎓 Buy Now on Gumroad</a>
+                </div>
+
+                <div class="card" style="border: 2px solid #4299e1;">
+                    <div class="card-icon">📦</div>
+                    <h3>Complete Bundle</h3>
+                    <p><strong>$79.99</strong> <span style="text-decoration: line-through; color: #999;">$102</span></p>
+                    <p>Get ALL digital products at 20% discount! Everything you need for Islamic science education</p>
+                    <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; color: #5a6c7d;">
+                        <li>eBook + Graphics + Wallpapers</li>
+                        <li>Planner + Video Course</li>
+                        <li>Future products included FREE</li>
+                        <li>Save $22 instantly!</li>
+                    </ul>
+                    <a href="https://hiratasqeen.gumroad.com/l/complete-bundle" target="_blank" class="btn" style="background: #4299e1; color: white; margin-top: 1rem;">💎 Buy Bundle & Save 20%</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Content -->
+        <div class="premium-box" id="premium">
+            <h2>🌟 Premium Membership - $9.99/month</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Purchase access to exclusive educational resources and premium content</p>
+        <div class="premium-box">
+            <h2>🌟 Premium Membership - $9.99/month</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Unlock exclusive educational resources and support our mission</p>
+            
+            <div class="premium-features">
+                <div class="premium-feature">
+                    <span>📚</span>
+                    <div>
+                        <strong>Downloadable PDFs</strong>
+                        <p>Print-ready chemistry guides with all equations</p>
+                    </div>
+                </div>
+                <div class="premium-feature">
+                    <span>🎥</span>
+                    <div>
+                        <strong>Video Explanations</strong>
+                        <p>Detailed chemistry tutorials by Hira Tasqeen</p>
+                    </div>
+                </div>
+                <div class="premium-feature">
+                    <span>🧪</span>
+                    <div>
+                        <strong>Lab Experiments</strong>
+                        <p>Home chemistry experiments with Islamic context</p>
+                    </div>
+                </div>
+                <div class="premium-feature">
+                    <span>📖</span>
+                    <div>
+                        <strong>Extended Tafsir</strong>
+                        <p>Deep dive into Quranic scientific miracles</p>
+                    </div>
+                </div>
+                <div class="premium-feature">
+                    <span>💬</span>
+                    <div>
+                        <strong>Private Community</strong>
+                        <p>Connect with other Muslim scientists</p>
+                    </div>
+                </div>
+                <div class="premium-feature">
+                    <span>⚡</span>
+                    <div>
+                        <strong>Early Access</strong>
+                        <p>New content 2 weeks before public release</p>
+                    </div>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://www.patreon.com/islamicwisdomanature" target="_blank" class="btn donation-btn" style="background: #FF424D; color: white; padding: 1rem 2rem; font-size: 1.1rem;">🔐 Join on Patreon - $9.99/mo</a>
+                <a href="https://hiratasqeen.gumroad.com/l/premium-membership" target="_blank" class="btn btn-gold donation-btn" style="padding: 1rem 2rem; font-size: 1.1rem;">💎 Buy on Gumroad - $99/year</a>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic; color: #5a6c7d;">Monthly via Patreon or Annual via Gumroad (Save $20!)</p>
+        </div>div>
+        <!-- Affiliate Products -->
+        <div class="affiliate-section">
+            <h2 class="section-title">📚 Shop Through Our Affiliate Links</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Purchase products you need - we earn a commission at no extra cost to you!</p>
+        <!-- Affiliate Products -->
+        <div class="affiliate-section">
+            <h2 class="section-title">📚 Recommended Resources (Affiliate Links)</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">When you purchase through these links, we earn a small commission at no extra cost to you</p>
+            
+            <div class="affiliate-grid">
+                <div class="affiliate-card">
+                    <div class="card-icon">📖</div>
+                    <h4>Chemistry Textbooks</h4>
+                    <p>Organic & Inorganic Chemistry guides</p>
+                    <a href="https://www.amazon.com/s?k=chemistry+textbook&tag=islamicwisdo-20" target="_blank" class="btn">📚 View on Amazon</a>
+                </div>
+
+                <div class="affiliate-card">
+                    <div class="card-icon">🔬</div>
+                    <h4>Lab Equipment</h4>
+                    <p>Home chemistry lab kits for students</p>
+                    <a href="https://www.amazon.com/s?k=chemistry+lab+kit&tag=islamicwisdo-20" target="_blank" class="btn">🧪 Shop Now</a>
+                </div>
+
+                <div class="affiliate-card">
+                    <div class="card-icon">📿</div>
+                    <h4>Islamic Books</h4>
+                    <p>Quran translations & tafsir collections</p>
+                    <a href="https://www.amazon.com/s?k=quran+translation&tag=islamicwisdo-20" target="_blank" class="btn">📖 Browse Books</a>
+                </div>
+
+                <div class="affiliate-card">
+                    <div class="card-icon">🎓</div>
+                    <h4>Online Courses</h4>
+                    <p>Chemistry & Islamic studies courses</p>
+                    <a href="https://www.udemy.com/courses/search/?q=chemistry&ref=islamicwisdomanature" target="_blank" class="btn">🎯 Explore Courses</a>
+        <!-- Other Support Methods -->
+        <div class="support-section">
+            <h2 class="section-title">🤝 Other Ways to Support (No Purchase Needed)</h2>
+
+        <!-- Other Support Methods -->
+                <div class="card">
+                    <div class="card-icon">📢</div>
+                    <h3>Share for Da'wah</h3>
+                    <p>Spread Islamic knowledge - share with family, friends, and on social media</p>
+                    <p style="color: #667eea; font-style: italic;">"Whoever guides someone to goodness will have a reward like theirs" - Hadith</p>
+                    <a href="#" class="btn">Share Now</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🤲</div>
+                    <h3>Make Du'a</h3>
+                    <p>Pray for the success of this project and benefit for the ummah</p>
+                    <p style="color: #667eea; font-style: italic;">"The du'a of a Muslim for their brother in their absence is answered" - Muslim</p>
+                    <a href="#" class="btn">Leave Du'a</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Volunteer Translation</h3>
+                    <p>Help spread to non-English speakers (Arabic, Urdu, Indonesian, etc.)</p>
+                    <p style="color: #667eea; font-style: italic;">Earn ajr by making Islamic knowledge accessible worldwide</p>
+                    <a href="#" class="btn">Volunteer</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔔</div>
+                    <h3>Join Our Ummah</h3>
+                    <p>Subscribe for new Islamic chemistry content and spiritual reflections</p>
+                    <p style="color: #667eea; font-style: italic;">Be part of a community connecting faith and science</p>
+                    <a href="#" class="btn">Subscribe</a>
+        <!-- Testimonials -->
+        <div class="support-section">
+            <h2 class="section-title">💬 Testimonials from the Ummah</h2>
+            
+            <div class="testimonial">
+                <p>"As a chemistry student and Muslim, this website beautifully bridges my faith and my studies. The chemical equations paired with Quranic verses are enlightening! Alhamdulillah!"</p>
+                <p class="author">— Sarah M., Chemistry Major</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"I gave sadaqah to support this amazing project. It's rare to find such high-quality Islamic educational content for free. May Allah ﷻ reward the creator abundantly!"</p>
+                <p class="author">— Ahmed K., Monthly Sadaqah Supporter</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"The Barakah membership is worth every penny. The downloadable PDFs and video tutorials are excellent for my research. This is true sadaqah jariyah!"</p>
+                <p class="author">— Dr. Fatima R., Biochemist & Barakah Member</p>
+            </div>
+
+            <div class="testimonial">
+        <!-- Contact for Partnerships -->
+        <div class="card" style="max-width: 800px; margin: 4rem auto; text-align: center; border: 3px solid #d4af37;">
+            <div class="card-icon">💼</div>
+            <h2>Business Partnerships & Advertising</h2>
+            <p style="font-size: 1.1rem; margin: 1.5rem 0;">
+                Interested in sponsorship, advertising, affiliate partnerships, or product collaborations?<br>
+                <strong>We work with educational, tech, and Islamic lifestyle brands</strong><br><br>
+                Contact: <strong>hiratasqeen@gmail.com</strong>
+            </p>
+            <a href="mailto:hiratasqeen@gmail.com" class="btn btn-gold">Inquire About Partnership</a>
+        </div>
+
+        <!-- Transparency Notice -->
+        <div style="max-width: 800px; margin: 3rem auto; padding: 2rem; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea;">
+            <h3 style="color: #667eea; margin-bottom: 1rem;">📊 Revenue & Transparency</h3>
+            <p style="line-height: 1.8; color: #2c3e50;">
+                • Revenue from product sales, affiliate commissions, and premium memberships<br>
+                • All funds support website maintenance, content creation, and improvements<br>
+                • Affiliate disclosure: We earn commission from qualifying purchases<br>
+                • Premium content pricing reflects development costs and ongoing value<br>
+                • Educational content remains freely accessible to all visitors<br>
+                • Your purchases and support help us continue creating quality content
+            </p>
+        </div>  <p class="author">— Dr. Fatima R., Biochemist</p>
+            </div>
+        </div>
+
+        <!-- Contact for Partnerships -->
+        <div class="card" style="max-width: 800px; margin: 4rem auto; text-align: center; border: 3px solid #d4af37;">
+            <div class="card-icon">💼</div>
+            <h2>Partner With Us</h2>
+            <p style="font-size: 1.1rem; margin: 1.5rem 0;">
+                Interested in sponsoring content, advertising, or collaborating?<br>
+                Contact: <strong>hiratasqeen@gmail.com</strong>
+            </p>
+            <a href="mailto:hiratasqeen@gmail.com" class="btn btn-gold">Get In Touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Islamic Wisdom & Nature. Created for spiritual reflection and inspiration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Founded by <strong>Hira Tasqeen</strong> - Chemist & Seeker of Truth</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
+            <a href="#" style="color: white; margin: 0 1rem;">Privacy Policy</a> | 
+            <a href="#" style="color: white; margin: 0 1rem;">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+

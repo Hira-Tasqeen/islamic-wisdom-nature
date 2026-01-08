@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Inspiration - Islamic Wisdom & Nature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.8s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Quote Card */
+        .inspiration-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            animation: scaleIn 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inspiration-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(102, 126, 234, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-source {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .quote-reference {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Date Display */
+        .date-display {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Daily Quotes Grid */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mini-quote-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .mini-quote-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .mini-quote-card .quote-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .mini-quote-card .quote-source {
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(44, 62, 80, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.3rem;
+            }
+
+            .inspiration-card {
+                padding: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌙 Islamic Wisdom & Nature</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="chemistry.html">Chemistry</a></li>
+                <li><a href="inspiration.html">Inspiration</a></li>
+                <li><a href="support.html">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="page-title">✨ Daily Inspiration</h1>
+        <p class="page-subtitle">Receive divine wisdom to guide your day, every single day</p>
+
+        <!-- Current Date -->
+        <div class="date-display" id="currentDate"></div>
+
+        <!-- Today's Main Quote -->
+        <div class="inspiration-card">
+            <p class="quote-text" id="mainQuoteText">Loading today's inspiration...</p>
+            <p class="quote-source" id="mainQuoteSource"></p>
+            <p class="quote-reference" id="mainQuoteReference"></p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="getNewInspiration()">🔄 Get New Quote</button>
+            <button class="btn btn-secondary" onclick="shareQuote()">📱 Share This</button>
+            <a href="support.html" class="btn btn-secondary">💝 Support This Project</a>
+        </div>
+
+        <!-- More Inspirational Quotes -->
+        <h2 style="margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem;">More Daily Inspirations</h2>
+        <div class="quotes-grid" id="quotesGrid"></div>
+    </div>
+
+    <script>
+        // Comprehensive collection of Islamic inspirational quotes
+        const inspirationalQuotes = [
+            {
+                text: "And He found you lost and guided [you].",
+                source: "Quran",
+                reference: "Surah Ad-Duha 93:7"
+            },
+            {
+                text: "Indeed, with hardship comes ease.",
+                source: "Quran",
+                reference: "Surah Ash-Sharh 94:6"
+            },
+            {
+                text: "So verily, with every difficulty, there is relief.",
+                source: "Quran",
+                reference: "Surah Ash-Sharh 94:5"
+            },
+            {
+                text: "And your Lord is going to give you, and you will be satisfied.",
+                source: "Quran",
+                reference: "Surah Ad-Duha 93:5"
+            },
+            {
+                text: "Do not lose hope, nor be sad.",
+                source: "Quran",
+                reference: "Surah Al-Imran 3:139"
+            },
+            {
+                text: "Allah does not burden a soul beyond that it can bear.",
+                source: "Quran",
+                reference: "Surah Al-Baqarah 2:286"
+            },
+            {
+                text: "When you forget that you need Allah, He puts you in a situation that causes you to call upon Him. And that's for your own good.",
+                source: "Hadith",
+                reference: "Ibn al-Qayyim"
+            },
+            {
+                text: "The believer's shade on the Day of Resurrection will be his charity.",
+                source: "Hadith",
+                reference: "Sahih Muslim"
+            },
+            {
+                text: "The best among you are those who have the best manners and character.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "Whoever believes in Allah and the Last Day, let him speak good or remain silent.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "The strong person is not the one who can wrestle someone else down. The strong person is the one who can control himself when he is angry.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "Be in this world as if you were a stranger or a traveler.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "Allah is with those who are patient.",
+                source: "Quran",
+                reference: "Surah Al-Baqarah 2:153"
+            },
+            {
+                text: "Remember Me, and I will remember you.",
+                source: "Quran",
+                reference: "Surah Al-Baqarah 2:152"
+            },
+            {
+                text: "The most beloved deeds to Allah are those that are most consistent, even if they are small.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "Seek knowledge from the cradle to the grave.",
+                source: "Hadith",
+                reference: "Prophet Muhammad ﷺ"
+            },
+            {
+                text: "The best of people are those that bring most benefit to the rest of mankind.",
+                source: "Hadith",
+                reference: "Prophet Muhammad ﷺ"
+            },
+            {
+                text: "A good word is charity.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "None of you truly believes until he loves for his brother what he loves for himself.",
+                source: "Hadith",
+                reference: "Sahih Bukhari"
+            },
+            {
+                text: "The world is a prison for the believer and paradise for the disbeliever.",
+                source: "Hadith",
+                reference: "Sahih Muslim"
+            }
+        ];
+
+        // Get quote of the day based on date
+        function getQuoteOfDay() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+            return inspirationalQuotes[dayOfYear % inspirationalQuotes.length];
+        }
+
+        // Display current date
+        function displayDate() {
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', options);
+        }
+
+        // Display main quote
+        function displayMainQuote() {
+            const quote = getQuoteOfDay();
+            document.getElementById('mainQuoteText').textContent = quote.text;
+            document.getElementById('mainQuoteSource').textContent = quote.source;
+            document.getElementById('mainQuoteReference').textContent = quote.reference;
+        }
+
+        // Get random new inspiration
+        function getNewInspiration() {
+            const randomQuote = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
+            document.getElementById('mainQuoteText').textContent = randomQuote.text;
+            document.getElementById('mainQuoteSource').textContent = randomQuote.source;
+            document.getElementById('mainQuoteReference').textContent = randomQuote.reference;
+            
+            // Add animation
+            const card = document.querySelector('.inspiration-card');
+            card.style.animation = 'none';
+            setTimeout(() => {
+                card.style.animation = 'scaleIn 0.6s ease';
+            }, 10);
+        }
+
+        // Share quote functionality
+        function shareQuote() {
+            const quoteText = document.getElementById('mainQuoteText').textContent;
+            const quoteSource = document.getElementById('mainQuoteSource').textContent;
+            const quoteReference = document.getElementById('mainQuoteReference').textContent;
+            const shareText = `"${quoteText}"\n\n- ${quoteSource} (${quoteReference})\n\nFrom Islamic Wisdom & Nature`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Daily Islamic Inspiration',
+                    text: shareText,
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Quote copied to clipboard! Share it with others.');
+                });
+            }
+        }
+
+        // Display quotes grid
+        function displayQuotesGrid() {
+            const grid = document.getElementById('quotesGrid');
+            const shuffled = [...inspirationalQuotes].sort(() => 0.5 - Math.random());
+            const selectedQuotes = shuffled.slice(0, 6);
+            
+            selectedQuotes.forEach(quote => {
+                const card = document.createElement('div');
+                card.className = 'mini-quote-card';
+                card.innerHTML = `
+                    <p class="quote-text">"${quote.text}"</p>
+                    <p class="quote-source">${quote.source}</p>
+                    <p class="quote-reference">${quote.reference}</p>
+                `;
+                card.onclick = () => {
+                    document.getElementById('mainQuoteText').textContent = quote.text;
+                    document.getElementById('mainQuoteSource').textContent = quote.source;
+                    document.getElementById('mainQuoteReference').textContent = quote.reference;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+                grid.appendChild(card);
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            displayDate();
+            displayMainQuote();
+            displayQuotesGrid();
+        };
+    </script>
+</body>
+</html>

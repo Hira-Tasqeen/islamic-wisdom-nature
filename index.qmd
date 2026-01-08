@@ -1,0 +1,203 @@
+---
+title: ""
+page-layout: custom
+---
+
+::: {.hero-section}
+::: {.hero-content}
+# Welcome to Islamic Wisdom & Nature {.hero-title}
+
+### Discover the beauty of Islamic teachings intertwined with the magnificence of Allah's creation {.hero-subtitle}
+
+> "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding." 
+> 
+> **— Quran 3:190**
+
+::: {.hero-buttons}
+[Explore Quotes](quotes.qmd){.btn .btn-primary}
+[View Gallery](gallery.qmd){.btn .btn-secondary}
+:::
+:::
+:::
+
+::: {.content-section}
+## About This Journey
+
+This website is a humble collection of Islamic wisdom paired with the breathtaking beauty of nature. Each quote reminds us of the Creator's signs in the world around us, inviting reflection and spiritual growth.
+
+::: {.features}
+::: {.feature-card}
+### 📖 Sacred Verses
+Authentic quotes from the Quran and Hadith, carefully selected to inspire and guide.
+:::
+
+::: {.feature-card}
+### 🌿 Nature's Beauty
+Stunning natural landscapes that reflect the majesty of Allah's creation.
+:::
+
+::: {.feature-card}
+### ✨ Daily Inspiration
+Find peace and wisdom through the combination of divine words and earthly beauty.
+:::
+:::
+:::
+
+<style>
+.hero-section {
+  min-height: 85vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin: -1rem -1rem 3rem -1rem;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 900px;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content blockquote {
+  border-left: 4px solid #d4af37;
+  padding-left: 1.5rem;
+  margin: 2rem auto;
+  font-style: italic;
+  font-size: 1.2rem;
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.hero-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid white;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.content-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5a67d8;
+}
+
+.feature-card p {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+</style>
