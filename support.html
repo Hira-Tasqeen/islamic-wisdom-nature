@@ -135,26 +135,10 @@
             height: auto;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-
         .card:hover {
             transform: translateY(-15px) scale(1.02);
             border-color: #667eea;
             box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-        }
-
-        .card:hover::before {
-            left: 100%;
         }
 
         .card-icon {
